@@ -22,7 +22,12 @@ public class Main {
                 System.out.println("Введите цену товара:");
                 if (scanner.hasNextDouble()) {
                     productPrice = scanner.nextDouble();
-                    validPrice = true;
+                    if(productPrice > 0){
+                        validPrice = true;
+                    } else {
+                        System.out.println("Цена товара не может быть меньше или равна нулю");
+                    }
+
                 } else {
                     scanner.next();
                     System.out.println("Вы ввели не число");
