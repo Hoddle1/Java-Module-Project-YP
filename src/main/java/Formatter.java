@@ -2,7 +2,7 @@ public class Formatter {
 
     public String getRuble(double num) {
         num = Math.floor(num);
-        double preLastDigit = (num % 100 / 10);
+        int preLastDigit = (int) (num % 100 / 10);
         if (preLastDigit == 1) {
             return "рублей";
         }
