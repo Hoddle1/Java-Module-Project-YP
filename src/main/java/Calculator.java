@@ -16,18 +16,17 @@ public class Calculator {
     }
 
     void printProducts() {
-        System.out.println("Добавленные товары:");
+        System.out.println("\nДобавленные товары:");
         for (Product product : products) {
-            System.out.println(product.name);
+            System.out.printf("%s (%.2f)\n", product.name, product.price);
         }
-
         printSplitPrice();
     }
 
     void printSplitPrice() {
-        Formatter formater = new Formatter();
+        Formatter formatter = new Formatter();
         double splitPrice = total / countPersons;
-        System.out.printf("Каждый человек должен заплатить %.2f %s", splitPrice, formater.getRubleAddition(splitPrice));
+        System.out.printf("Каждый человек должен заплатить %.2f %s\n", splitPrice, formatter.getRuble(splitPrice));
     }
 
 }
